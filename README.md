@@ -2,9 +2,9 @@
 
 Group project for Foundations of Data Science Module 
 
-## Aim
+## Objective 
 
-To build predictive models that can predict the personality type of a person given some review/comment data then use these models to inform business decisions. To do so, we apply the models to a Yelp business review dataset so that the business can understand their customers better building a prototype application to demonstrate utility. 
+We present a predictive model pipeline for determining the personality of business users utilising  comments supporting business review feedback. We use forum comments with attached Myers Briggs personality types in building the models with high accuracy, a mean of 85\% for each of the four letters, and use these models to determine the personality types of Yelp business reviews. We demonstrate the utility of such a pipeline in a web application which allows businesses to understand its reviewer base across the personality types.   
 
 ## Members 
 
