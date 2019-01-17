@@ -1,0 +1,421 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#importing json to read in data\n",
+    "import json\n",
+    "from pprint import pprint\n",
+    "import pandas as pd\n",
+    "import numpy as np \n",
+    "import re\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#opening json file\n",
+    "with open('yelp_academic_dataset_business.json',encoding=\"utf8\") as data_file:\n",
+    "    number = next(data_file).strip()\n",
+    "    data = [json.loads(line) for line in data_file]\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "28865\n",
+      "18233\n",
+      "102\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Collecting busines id for city values\n",
+    "#creating lists to store each city and business id\n",
+    "Las_vegas = []\n",
+    "Toronto = []\n",
+    "BusinessIds = []\n",
+    "\n",
+    "#looping to get the records for Las Vegas and Toronto cities\n",
+    "for i in range(len(data)):\n",
+    "    if data[i]['city'] == 'Las Vegas':\n",
+    "        Las_vegas.append(i)\n",
+    "        \n",
+    "    if data[i]['city'] == 'Toronto':\n",
+    "        Toronto.append(i) \n",
+    " \n",
+    "#checking length is reasonable\n",
+    "print(len(Las_vegas))\n",
+    "print(len(Toronto))\n",
+    "\n",
+    "#putting the businessids into one list\n",
+    "count_l = 0\n",
+    "number_required = 50\n",
+    "count_t = 0\n",
+    "for i in range(len(Las_vegas)):\n",
+    "    if (data[Las_vegas[i]]['review_count'] > 900 &  data[Las_vegas[i]]['review_count'] < 1100):\n",
+    "        \n",
+    "        count_l += 1\n",
+    "        BusinessIds.append(data[Las_vegas[i]]['business_id'])\n",
+    "        if count_l > number_required:\n",
+    "            break\n",
+    "             \n",
+    "\n",
+    "        \n",
+    "\n",
+    "    \n",
+    "for i in range(len(Toronto)):\n",
+    "    if (data[Toronto[i]]['review_count'] > 900 &  data[Toronto[i]]['review_count'] < 1100):\n",
+    "        count_t += 1\n",
+    "        BusinessIds.append(data[Toronto[i]]['business_id'])\n",
+    "        if count_t > number_required:\n",
+    "            break\n",
+    "\n",
+    "#ensuring no duplicated in list\n",
+    "Filtered_Business_Ids = list(set(BusinessIds))\n",
+    "\n",
+    "\n",
+    "\n",
+    "print(len(Filtered_Business_Ids))\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#output business ids into a json file\n",
+    "Business_ids = []\n",
+    "for i in range(len(Filtered_Business_Ids)):\n",
+    "    Business_ids.append(json.dumps({'Business_id': Filtered_Business_Ids[i]}))\n",
+    "\n",
+    "\n",
+    "with open('Business_ids.json', 'w') as outfile:\n",
+    "    json.dump(BusinessIds, outfile)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#checking json file\n",
+    "with open('Business_ids.json') as f:\n",
+    "    data2 = json.load(f)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#beginning of Fairouz's code\n",
+    "#move business ids to dataframe\n",
+    "busids = pd.read_json('Business_ids.json',lines=True,orient='index')\n",
+    "biz_ids = pd.DataFrame(busids)\n",
+    "columns = ['business_id']\n",
+    "biz_ids.columns = columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#load reviews from feathers\n",
+    "import feather\n",
+    "reviews1 = feather.read_dataframe('reviews1.feather')\n",
+    "reviews2 = feather.read_dataframe('reviews2.feather')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'list1 count: '"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "user_id    1678\n",
+       "dtype: int64"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'list2 count: '"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "user_id    1625\n",
+       "dtype: int64"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'list1+2 count: '"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "user_id    3303\n",
+       "dtype: int64"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'list1+2 de-duplicated: '"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "user_id    3303\n",
+       "dtype: int64"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "#select users who commented on the selected business - remove any user duplicates\n",
+    "import pandas as pd\n",
+    "temp_user = pd.DataFrame(columns=['user_id']) \n",
+    "users_list1 = pd.DataFrame(reviews1[reviews1['business_id'].isin(biz_ids['business_id'])]['user_id'])\n",
+    "users_list2 = pd.DataFrame(reviews2[reviews2['business_id'].isin(biz_ids['business_id'])]['user_id'])\n",
+    "users_list1 = users_list1.drop_duplicates(subset='user_id',keep='first')\n",
+    "display('list1 count: ') \n",
+    "display(users_list1.count())\n",
+    "users_list2 = users_list2.drop_duplicates(subset='user_id',keep='first')\n",
+    "display('list2 count: ') \n",
+    "display(users_list2.count())\n",
+    "users_list1 = users_list1.append(users_list2)\n",
+    "display('list1+2 count: ') \n",
+    "display(users_list1.count())\n",
+    "users_list1 = users_list1.drop_duplicates(subset='user_id',keep='first')\n",
+    "display('list1+2 de-duplicated: ') \n",
+    "display(users_list1.count())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "business_id    186180\n",
+       "cool           186180\n",
+       "date           186180\n",
+       "funny          186180\n",
+       "review_id      186180\n",
+       "stars          186180\n",
+       "text           186180\n",
+       "useful         186180\n",
+       "user_id        186180\n",
+       "dtype: int64"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#read comments made by users accross yelp dataset\n",
+    "users_comments1 = pd.DataFrame(reviews1[reviews1['user_id'].isin(users_list1['user_id'])])\n",
+    "users_comments2 = pd.DataFrame(reviews2[reviews2['user_id'].isin(users_list1['user_id'])])\n",
+    "users_comments = users_comments1.append(users_comments2)\n",
+    "users_comments.count()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "vocab_dic = {} \n",
+    "bag_of_words_vocab = pd.read_csv('bag_of_words_vocab_5000.csv').columns\n",
+    "for x in range(len(bag_of_words_vocab)):\n",
+    "    vocab_dic[bag_of_words_vocab[x]] = x"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "comments_only = users_comments.groupby('user_id')['text'].apply(' '.join)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "comments_only = comments_only.reset_index()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "comments_only.to_csv('../Data.yelp_comments_reduced.csv')\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

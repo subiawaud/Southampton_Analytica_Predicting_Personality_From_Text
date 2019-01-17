@@ -1,0 +1,141 @@
+\documentclass[sigconf, nonacm]{acmart}
+
+\usepackage{booktabs} % For formal tables
+\usepackage{graphicx}
+\usepackage[ruled]{algorithm2e} % For algorithms
+\renewcommand{\algorithmcfname}{ALGORITHM}
+\SetAlFnt{\small}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+\SetAlCapHSkip{0pt}
+\IncMargin{-\parindent}
+
+
+% Document starts
+
+% Title portion
+\title{Machine learning models to predict psychometric personality types to better understand customer reviews}
+
+
+\author{Christopher Culley}
+\affiliation{%
+  \institution{University of Southampton}
+  \streetaddress{2 University Rd}
+  \city{Southampton}
+  \state{Hampshire}
+  \postcode{SO17 1BJ}
+  \country{UK}}
+\email{cc2u18@soton.ac.uk}
+\author{Sam Banks}
+\affiliation{%
+  \institution{University of Southampton}
+  \streetaddress{2 University Rd}
+  \city{Southampton}
+  \state{Hampshire}
+  \postcode{SO17 1BJ}
+  \country{UK}}
+\email{swb1n18@soton.ac.uk}
+\author{Fairoux Aldabbagh}
+\affiliation{%
+  \institution{University of Southampton}
+  \streetaddress{2 University Rd}
+  \city{Southampton}
+  \state{Hampshire}
+  \postcode{SO17 1BJ}
+  \country{UK}}
+\email{fa2n18@soton.ac.uk}
+\author{Jak Hall}
+\affiliation{%
+  \institution{University of Southampton}
+  \streetaddress{2 University Rd}
+  \city{Southampton}
+  \state{Hampshire}
+  \postcode{SO17 1BJ}
+  \country{UK}}
+\email{jh16g18@soton.ac.uk}
+
+\author{Claudia Subia}
+\affiliation{%
+  \institution{University of Southampton}
+  \streetaddress{2 University Rd}
+  \city{Southampton}
+  \state{Hampshire}
+  \postcode{SO17 1BJ}
+  \country{UK}}
+\email{cms2n17@soton.ac.uk}
+
+\begin{abstract}
+Introduction
+\end{abstract}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Ethics}
+\section{Methodology}
+\subsection{Datasets}
+
+talk about the breaking INFP into four different targets. 
+
+\cite{mccaulley1990myers} << mbti ref 
+\section{Preprocessing}
+
+Biased datasets reduce the generalisability of predictive models and as such need to be corrected. The MBTi, has clear bias with some letter weightings observed for 75\% of the datapoints. Although there are many options to resolve this \cite{huang2007correcting}, we utilise the simplest though re-sampling separate balanced datasets by target. We do this for each of the four targets in the MBTi dataset, creating four distinct train test sets with balanced targets.   \\
+
+In order to ready the data to build the predictive models we first apply a number of pre-processing steps in order to maximise the opportunity for meaningful patterns to be extracted. We begin by combining reviews from the same person in both the datasets into corpus from with which we apply some feature engineering listed in Table \ref{feature_engineering}. We note to the reader, the sentiment analysis features, polarity and subjectivity as well as the word probability information were applied, using the NLTK library \cite{bird2004nltk}, to each users with the listed statistics captured over the individuals aggregated corpus. \\
+
+We next turn the corpus into a bag-of-words where each instance of a word in a corpus corresponds to count in a column. We do this for the 5,000 most common words found inside the MBTi dataset ignoring stopwords. We take forward in total 5,017 features to be used inside the machine learning models. \\
+
+At this point we note to the reader the quandary of scaling. Since scaling the data is a requirement for some algorithms, such as the SVM, and leads to faster solution convergence for neural networks \cite{lecun2012efficient} we need to apply scaling to the MBTi. In situations when it is expected that train-test splits are of the same distributions one would normally  minus the train mean and divide by the train standard deviation for all data-points in both the train and test set which, in the MBTi case, presents no problem. The problem arises when we want to next apply the model learned from the MBTi to the Yelp data. Which, may follow a different distribution, this is particularly pronounced when there is more data per corpus (and thus a higher average word count). To overcome this, we normalise the Yelp data using its own mean and standard deviation which we found empirically gave a distribution of targets closer to which is expected in the general population but note this highlights a limitation in our generalisation approach -- applying machine learning models from one source to another. 
+
+\begin{table}
+\begin{tabular}{ | c | }
+\hline
+Features Extracted  \\
+\hline 
+Average word length  \\
+Max polarity \\
+Min polarity \\
+Average polarity \\
+Max subjectivity \\
+Min subjectivity \\
+Average subjectivity \\
+Percentage of words misspelled \\
+Average misspelled word length \\
+Max word probability \\
+Average word probability \\
+Standard deviation of word probabilities \\
+Percentage of words that are emoticons  \\
+Percentage of letters that are punctuation \\
+Percentage of words that are uppercase \\ (excluding single letters) \\
+Percentage of letters that are numerical \\
+Percentage of words that are stop words \\
+\hline 
+\end{tabular}
+\label{feature_engineering}
+\caption{The features extracted from the corpus of words defined by each user in both the MBTi and the Yelp datasets}
+\end{table} 
+\section{Machine Learning}
+
+
+\cite{joachims1998text} - SVMs are good <<
+
+
+\section{Analysis}
+\section{Application}
+\section{Discussion}
+
+\cite{boyle1995myers} mbti limitiations 
+
+\cite{yang1997comparative} << comparative study we could have got more ideas from 
+
+Further word will need to be done to understand the underlying distribution of the yelp and see how close it is to the mbit (kullback leiber divergence) 
+
+
+\bibliography{yelp_review_personailities.bib}
+\bibliographystyle{ieeetr}
+
+
+\end{document}

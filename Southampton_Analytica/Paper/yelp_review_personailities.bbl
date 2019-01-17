@@ -1,0 +1,37 @@
+\begin{thebibliography}{1}
+
+\bibitem{mccaulley1990myers}
+M.~H. McCaulley, ``The myers-briggs type indicator: A measure for individuals
+  and groups,'' {\em Measurement and evaluation in counseling and development},
+  vol.~22, no.~4, pp.~181--195, 1990.
+
+\bibitem{huang2007correcting}
+J.~Huang, A.~Gretton, K.~M. Borgwardt, B.~Sch{\"o}lkopf, and A.~J. Smola,
+  ``Correcting sample selection bias by unlabeled data,'' in {\em Advances in
+  neural information processing systems}, pp.~601--608, 2007.
+
+\bibitem{bird2004nltk}
+S.~Bird and E.~Loper, ``Nltk: the natural language toolkit,'' in {\em
+  Proceedings of the ACL 2004 on Interactive poster and demonstration
+  sessions}, p.~31, Association for Computational Linguistics, 2004.
+
+\bibitem{lecun2012efficient}
+Y.~A. LeCun, L.~Bottou, G.~B. Orr, and K.-R. M{\"u}ller, ``Efficient
+  backprop,'' in {\em Neural networks: Tricks of the trade}, pp.~9--48,
+  Springer, 2012.
+
+\bibitem{joachims1998text}
+T.~Joachims, ``Text categorization with support vector machines: Learning with
+  many relevant features,'' in {\em European conference on machine learning},
+  pp.~137--142, Springer, 1998.
+
+\bibitem{boyle1995myers}
+G.~J. Boyle, ``Myers-briggs type indicator (mbti): Some psychometric
+  limitations,'' {\em Australian Psychologist}, vol.~30, no.~1, pp.~71--74,
+  1995.
+
+\bibitem{yang1997comparative}
+Y.~Yang and J.~O. Pedersen, ``A comparative study on feature selection in text
+  categorization,'' in {\em Icml}, vol.~97, pp.~412--420, 1997.
+
+\end{thebibliography}

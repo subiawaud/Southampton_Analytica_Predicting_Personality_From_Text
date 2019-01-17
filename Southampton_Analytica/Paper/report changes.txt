@@ -1,0 +1,23 @@
+Hi Chris, in response to your feedback request on the report: 
+
+Possible errors:
+ 
+- "used by business to evaluate" : Application - para 5 - done
+- "an deeper" : Introduction - para 1  - done 
+- "To build the build" : Machine Learning - para 1  -done 
+- "shown to be work well" : Machine Learning - para 1 - done
+- "Fairoux" - Header 
+
+Possible changes: 
+
+- Preprocessing para 4 feels a bit lengthy and could be split on "The problem arises"  - done
+- Large gap betweeen para 1 and para 2 in Application.  - Latex makes best use of the space, its best to leave 
+- We're still mentioning Toronto as well as Las Vegas in the business.  - done 
+- Although findings are listed above in Analysis, The conclusion could include a summary 
+  of notable results. - Done done and done :) 
+
+Thats all we could find/think of :) your call if you want to change them. 
+
+-Jak.
+
+Thanks Jak, Chris 

@@ -1,0 +1,136 @@
+\begin{thebibliography}{10}
+
+\bibitem{mudambi2010research}
+S.~M. Mudambi and D.~Schuff, ``Research note: What makes a helpful online
+  review? a study of customer reviews on amazon. com,'' {\em MIS quarterly},
+  pp.~185--200, 2010.
+
+\bibitem{sparks2011impact}
+B.~A. Sparks and V.~Browning, ``The impact of online reviews on hotel booking
+  intentions and perception of trust,'' {\em Tourism management}, vol.~32,
+  no.~6, pp.~1310--1323, 2011.
+
+\bibitem{baumgartner2002toward}
+H.~Baumgartner, ``Toward a personology of the consumer,'' {\em Journal of
+  consumer research}, vol.~29, no.~2, pp.~286--292, 2002.
+
+\bibitem{bosnjak2007personality}
+M.~Bosnjak, M.~Galesic, and T.~Tuten, ``Personality determinants of online
+  shopping: Explaining online purchase intentions using a hierarchical
+  approach,'' {\em Journal of Business Research}, vol.~60, no.~6, pp.~597--605,
+  2007.
+
+\bibitem{mairesse2006automatic}
+F.~Mairesse and M.~Walker, ``Automatic recognition of personality in
+  conversation,'' in {\em Proceedings of the Human Language Technology
+  Conference of the NAACL, Companion Volume: Short Papers}, pp.~85--88,
+  Association for Computational Linguistics, 2006.
+
+\bibitem{mccaulley1990myers}
+M.~H. McCaulley, ``The myers-briggs type indicator: A measure for individuals
+  and groups,'' {\em Measurement and evaluation in counseling and development},
+  vol.~22, no.~4, pp.~181--195, 1990.
+
+\bibitem{challenge2013yelp}
+Y.~D. Challenge, ``Yelp dataset challenge,'' 2013.
+
+\bibitem{fan2014predicting}
+M.~Fan and M.~Khademi, ``Predicting a business star in yelp from its reviews
+  text alone,'' {\em arXiv preprint arXiv:1401.0864}, 2014.
+
+\bibitem{huang2014improving}
+J.~Huang, S.~Rogers, and E.~Joo, ``Improving restaurants by extracting
+  subtopics from yelp reviews,'' {\em iConference 2014 (Social Media Expo)},
+  2014.
+
+\bibitem{mbti_data}
+PersonalityCafe, ``Mbti-type - personalitycafe dataset,'' 2016.
+
+\bibitem{huang2007correcting}
+J.~Huang, A.~Gretton, K.~M. Borgwardt, B.~Sch{\"o}lkopf, and A.~J. Smola,
+  ``Correcting sample selection bias by unlabeled data,'' in {\em Advances in
+  neural information processing systems}, pp.~601--608, 2007.
+
+\bibitem{bird2004nltk}
+S.~Bird and E.~Loper, ``Nltk: the natural language toolkit,'' in {\em
+  Proceedings of the ACL 2004 on Interactive poster and demonstration
+  sessions}, p.~31, Association for Computational Linguistics, 2004.
+
+\bibitem{lecun2012efficient}
+Y.~A. LeCun, L.~Bottou, G.~B. Orr, and K.-R. M{\"u}ller, ``Efficient
+  backprop,'' in {\em Neural networks: Tricks of the trade}, pp.~9--48,
+  Springer, 2012.
+
+\bibitem{hosmer2000applied}
+D.~Hosmer and S.~Lemeshow, ``Applied logistic regression., 2nd edn.(wiley: New
+  york.),'' {\em NY, USA}, 2000.
+
+\bibitem{geron2017hands}
+A.~G{\'e}ron, {\em Hands-on machine learning with Scikit-Learn and TensorFlow:
+  concepts, tools, and techniques to build intelligent systems}.
+\newblock " O'Reilly Media, Inc.", 2017.
+
+\bibitem{wang2006optimal}
+Z.-Q. Wang, X.~Sun, D.-X. Zhang, and X.~Li, ``An optimal svm-based text
+  classification algorithm,'' in {\em Machine Learning and Cybernetics, 2006
+  International Conference on}, pp.~1378--1381, IEEE, 2006.
+
+\bibitem{vapnik2013nature}
+V.~Vapnik, {\em The nature of statistical learning theory}.
+\newblock Springer science \& business media, 2013.
+
+\bibitem{joachims1998text}
+T.~Joachims, ``Text categorization with support vector machines: Learning with
+  many relevant features,'' in {\em European conference on machine learning},
+  pp.~137--142, Springer, 1998.
+
+\bibitem{breiman2001random}
+L.~Breiman, ``Random forests,'' {\em Machine learning}, vol.~45, no.~1,
+  pp.~5--32, 2001.
+
+\bibitem{lippmann1987introduction}
+R.~Lippmann, ``An introduction to computing with neural nets,'' {\em IEEE Assp
+  magazine}, vol.~4, no.~2, pp.~4--22, 1987.
+
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
+  ``Dropout: a simple way to prevent neural networks from overfitting,'' {\em
+  The Journal of Machine Learning Research}, vol.~15, no.~1, pp.~1929--1958,
+  2014.
+
+\bibitem{kingma2014adam}
+D.~P. Kingma and J.~Ba, ``Adam: A method for stochastic optimization,'' {\em
+  arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{cohen2013mbti}
+Y.~Cohen, H.~Ornoy, and B.~Keren, ``Mbti personality types of project managers
+  and their success: A field survey,'' {\em Project Management Journal},
+  vol.~44, no.~3, pp.~78--87, 2013.
+
+\bibitem{levy1972personality}
+N.~Levy, C.~Murphy~Jr, and R.~Carlson, ``Personality types among negro college
+  students,'' {\em Educational and Psychological Measurement}, vol.~32, no.~3,
+  pp.~641--653, 1972.
+
+\bibitem{furnham1993personality}
+A.~Furnham and P.~Stringfield, ``Personality and occupational behavior:
+  Myers-briggs type indicator correlates of managerial practices in two
+  cultures,'' {\em Human Relations}, vol.~46, no.~7, pp.~827--848, 1993.
+
+\bibitem{myers1998mbti}
+I.~B. Myers, M.~H. McCaulley, N.~L. Quenk, and A.~L. Hammer, {\em MBTI manual:
+  A guide to the development and use of the Myers-Briggs Type Indicator},
+  vol.~3.
+\newblock Consulting Psychologists Press Palo Alto, CA, 1998.
+
+\bibitem{boyle1995myers}
+G.~J. Boyle, ``Myers-briggs type indicator (mbti): Some psychometric
+  limitations,'' {\em Australian Psychologist}, vol.~30, no.~1, pp.~71--74,
+  1995.
+
+\bibitem{gosling2003very}
+S.~D. Gosling, P.~J. Rentfrow, and W.~B. Swann~Jr, ``A very brief measure of
+  the big-five personality domains,'' {\em Journal of Research in personality},
+  vol.~37, no.~6, pp.~504--528, 2003.
+
+\end{thebibliography}
