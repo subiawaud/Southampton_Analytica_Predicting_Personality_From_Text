@@ -8,12 +8,11 @@ To build predictive models that can predict the personality type of a person giv
 
 ## Members 
 
-Team lead : Chris Culley
-Members : Claudia Subia, Jak Hall, Fairouz, Sam Banks 
+Team lead : Chris Culley, Members : Claudia Subia, Jak Hall, Fairouz, Sam Banks 
 
-Datasets used: 
-* MBTI Kaggle 
-* Yelp Kaggle
+## Datasets used
+* MBTI Kaggle  - https://www.kaggle.com/datasnaek/mbti-type/home
+* Yelp Kaggle - https://www.kaggle.com/yelp-dataset/yelp-dataset/home
 
 ## Method
 
