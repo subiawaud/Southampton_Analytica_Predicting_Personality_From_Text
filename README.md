@@ -20,7 +20,7 @@ Stage one - Chris:
 
 * Preprocess and feature engineering of the text data from both datasets. We explore sentiment analysis, word probabilities, spelling error length and percentage, language use as well as the standard lemmatisation and vectorisation. 
 
-Stage two - Claudia: 
+Stage two - Claudia & Chris: 
 
 * Build predictive models that can predict each of the personality letters that constitute a personality type using the labelled MBTI data. We achieve an accuracy rate of 85-95% depending on the personality letter. 
 
